@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="icon" href="images/color-wheel.png">
+    <link rel="manifest" href="manifest.json">
+    <title>Hexa Guess</title>
+</head>
+<body>
+    <div id="lightbox">
+        <div id="lightboxWrapper">
+            <h1 id="welcome">Welcome to Hexa Guess</h1>
+            <div id="endMessage">
+                <h2 id="message"></h2>
+            </div>
+            <div id="modeChoice">
+                <h2>Choose Your Mode</h2>
+                <div id="hard" onclick="chooseMode('mode1')">
+                    <h3>Match the Code to the Color</h3>
+                </div>  
+                <div id="normal" onclick="chooseMode('mode2')">
+                    <h3>Match the Color to the Code</h3>
+                </div>
+            </div>
+            <div id="levelChoice">
+                <h2>Choose Your Diffuculty</h2>
+                <div id="hard" onclick="chooseLevel('hard')">
+                    <h3>Hard Mode</h3>
+                </div>
+                <div id="normal" onclick="chooseLevel('normal')">
+                    <h3>Normal Mode</h3>
+                </div>
+                <div id="easy" onclick="chooseLevel('easy')">
+                    <h3>Easy Mode</h3>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <h1 id="question">What is the color code for this color?</h1>
+    <div id="colorSample">
+        <h1 id="colorCode"></h1>
+        <h2 id="response"></h2>
+    </div>
+    
+    <div id="answerWrapper">
+        <div id="scoreBox" class="answer">Score: <span id="score">0 / 10</span></div>
+        <div id="runBox" class="answer">Question: <span id="questionsRun">1 / 10</span></div>
+        <div id="a" class="answer"></div>
+        <div id="b" class="answer"></div>
+        <div id="c" class="answer"></div>
+        <div id="d" class="answer"></div>
+        <div id="e" class="answer"></div>
+        <div id="f" class="answer"></div>
+        <div id="g" class="answer"></div>
+        <div id="h" class="answer"></div>
+    </div>
+    
+
+    
+
+    
+
+</body>
+</html>

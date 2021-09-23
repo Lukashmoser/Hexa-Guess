@@ -1,0 +1,118 @@
+/*
+Color Palette
+Ming #006d77
+Middle Blue Green #83C5BE
+Alice Blue #EDF6F9
+Un Bleached Silk #FFDDD2
+Dark Salmon #E29578
+
+*/
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #ffddd2;
+    color: #006d77;
+}
+
+#lightbox{
+    position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
+    display: block;
+}
+
+#levelChoice{
+    display: none;
+}
+
+#modeChoice{
+    display: block;
+}
+
+#endMessage{
+    text-align: center;
+    display: none;
+}
+
+#lightboxWrapper{
+    width: 500px;
+    height: 280px;
+    margin: auto;
+    background-color: #edf6f9;
+    border: 5px solid #e29578;
+    border-radius: 25px;
+    margin-top: 50px;
+
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+    font-size: 1.7em;
+}
+
+h3{
+    text-align: center;
+    font-size: 1.3em;
+}
+
+#colorSample{
+    width: 500px;
+    height: 300px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #edf6f9;
+    border-radius: 25px;
+    font-size: 3em;
+    text-align: center;
+    padding-top: 50px;
+    border: 5px solid #e29578;
+    margin-bottom: 15px;
+}
+
+.answer{
+    width: 235px;
+    font-size: 1.5em;
+    border: 5px solid #e29578;
+    color: #006d77;
+    background-color: #edf6f9;
+    border-radius: 25px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#scoreBox{grid-area: "score";}
+#runBox{grid-area: "run";}
+#a{display:none; grid-area: "a";}
+#b{display:none; grid-area: "b";}
+#c{display:none; grid-area: "c";}
+#d{display:none; grid-area: "d";}
+#e{display:none; grid-area: "e";}
+#f{display:none; grid-area: "f";}
+#g{display:none; grid-area: "g";}
+#h{display:none; grid-area: "h";}
+
+#answerWrapper{
+    width: 510px;
+    margin: auto;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-areas: 
+    'score run'
+    'a b'
+    'c d'
+    'e f'
+    'g h';
+}
+

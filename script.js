@@ -8,6 +8,7 @@ let questionsRun = 0; // questions run
 let levelChosen = null; // level chosen
 let modeChosen = null; // mode chosen
 let numOptions = null; // number of color options
+let questions = null; // number of current question
 
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js');
@@ -39,11 +40,25 @@ function markIt(elem){
     let gotItRight = false;
     questionsRun++;
     // check if answer is correct
-    if(elem.innerHTML == correctColorCode){
-        score++;
-        gotItRight = true;
+    if(modeChosen == "mode1"){
+        if(elem.innerHTML == correctColorCode){
+            score++;
+            gotItRight = true;
+        }
     }
-    let questions = questionsRun + 1;
+    if(modeChosen == "mode2"){
+        console.log(elem.style.backgroundColor);
+        correctColorCode = correctColorCode.replace('#','');
+        if(elem.style.backgroundColor == correctColorCode.convertToRGB()){
+            score++;
+            gotItRight = true;
+        }
+    }
+    
+    if(questions < 10){
+        questions = questionsRun + 1;    
+    }
+    
     document.getElementById("score").innerHTML = score + "/" + total;
     document.getElementById("questionsRun").innerHTML = questions + "/" + total;
 
@@ -66,6 +81,22 @@ function markIt(elem){
     } ,600);
 }// markIt
 
+String.prototype.convertToRGB = function(){
+    if(this.length != 6){
+        throw "Only six-digit hex colors are allowed.";
+    }
+
+    var aRgbHex = this.match(/.{1,2}/g);
+    var aRgb = [
+        parseInt(aRgbHex[0], 16),
+        parseInt(aRgbHex[1], 16),
+        parseInt(aRgbHex[2], 16)
+    ];
+
+    let code = "rgb(" + aRgb[0] + ", " + aRgb[1] + ", " + aRgb[2] + ")";
+    
+    return code;
+}
 
 // load a new question
 function loadNewQuestion(){

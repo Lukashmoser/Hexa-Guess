@@ -44,8 +44,8 @@ function markIt(elem){
         gotItRight = true;
     }
     let questions = questionsRun + 1;
-    document.getElementById("score").innerHTML = score + " / " + total;
-    document.getElementById("questionsRun").innerHTML = questions + " / " + total;
+    document.getElementById("score").innerHTML = score + "/" + total;
+    document.getElementById("questionsRun").innerHTML = questions + "/" + total;
 
     window.setTimeout(function(){
         document.getElementById("colorCode").innerHTML = "";
@@ -118,7 +118,8 @@ function getRandomHexCode(){
 } // getRandomHexCode
 
 function endGame(){
-    document.getElementById("message").innerHTML = "Your final score was " + score + " / " + total + ".";
+    hide("welcome");
+    document.getElementById("message").innerHTML = "Your final score was " + score + "/" + total + ".";
     show("lightbox");
     show("endMessage");
 }
@@ -160,4 +161,12 @@ function chooseMode(choice){
     }
     hide("modeChoice");
     show("levelChoice");
+}
+
+function playAgain(){
+    window.location.reload();
+}
+
+function rageQuit(){
+    window.close();
 }

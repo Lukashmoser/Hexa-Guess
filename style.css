@@ -27,6 +27,16 @@ body{
     display: block;
 }
 
+button{
+    border: 5px solid #83C5BE;
+    background-color: #FFDDD2;
+    height: 50px;
+    width: 150px;
+    border-radius: 25px;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
 #levelChoice{
     display: none;
 }
@@ -114,5 +124,36 @@ h3{
     'c d'
     'e f'
     'g h';
+}
+
+@media screen and (max-width: 500px){
+    #answerWrapper{
+        width: 350px;
+    }
+    .answer{
+        font-size: 20px;
+        width: 155px;
+    }
+    #colorSample{
+        width: 350px;
+        height: 200px;
+    }
+    #lightboxWrapper{
+        width: 350px;
+        height: 260px;
+    }
+    #question{
+        font-size: 20px;
+    }
+    #colorCode{
+        font-size: 60px;
+    }
+    #response{
+        font-size: 40px;
+    }
+    #welcome{
+        font-size: 28px;
+    }
+
 }
 
